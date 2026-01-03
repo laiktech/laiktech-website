@@ -21,14 +21,14 @@ const CustomButtonStyled = styled(Button)(({ theme }) => ({
 
   // small
   "&.MuiButton-sizeSmall": {
-    padding: "0.25em 1em",
+    padding: "0.5em 1.5em",
     fontSize: "0.75rem",
   },
 
   // medium
   "&.MuiButton-sizeMedium": {
-  padding: "0.5em 1.5em",
-    fontSize: "0.75rem",
+    padding: "0.7em 2em",
+    fontSize: "1rem",
   },
 
   // large
