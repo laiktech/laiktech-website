@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { SxProps, Theme } from "@mui/material/styles";
+import { CustomButton } from "../shared/components/custom-button";
 
 const textFieldStyle: SxProps<Theme> = {
   "& label": {
@@ -13,7 +14,7 @@ const textFieldStyle: SxProps<Theme> = {
   },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
-      borderRadius: "20px",
+      borderRadius: "11px",
       borderColor: "gray",
     },
     "&:hover fieldset": {
@@ -29,6 +30,8 @@ const textFieldStyle: SxProps<Theme> = {
   },
 };
 
+const formLabelStyle = "text-[1.3rem] mt-6";
+
 export const ContactUs = () => {
 
   return (
@@ -40,9 +43,9 @@ export const ContactUs = () => {
         className="object-cover"
       />
       <Box className="contact-us__content absolute text-white top-0 h-full w-full p-4">
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className="h-full" >
           <Grid size={6}>
-            <Box className="contact-us__title h-full flex items-end">
+            <Box className="contact-us__title h-full flex items-center">
               <p className="leading-none text-[6rem] font-bold">Houston, <br /> hallamos la solución </p>
             </Box>
           </Grid>
@@ -53,26 +56,27 @@ export const ContactUs = () => {
                 backdropFilter: "blur(2px)",
                 backgroundColor: "rgb(255 255 255 / 2%)",
                 padding: "4em",
-                margin: "1em",
+                margin: "2em",
               }}
               noValidate
               autoComplete="off"
             >
-              <p className="text-[1.7rem] mb-4">Cuéntanos sobre tu proyecto</p>
-              <TextField fullWidth id="project-form-detail" variant="outlined"
-                multiline rows={6}
+              <p className={ formLabelStyle } >Cuéntanos sobre tu proyecto</p>
+              <TextField fullWidth id="project-form-detail" variant="outlined" size="small"
+                multiline rows={3} sx={ textFieldStyle }
+              />
+
+              <p className={ formLabelStyle } >Nombre</p>
+              <TextField fullWidth id="project-form-name" variant="outlined" size="small"
                 sx={ textFieldStyle }
               />
 
-              <p className="text-[1.7rem] mb-4">Nombre</p>
-              <TextField fullWidth id="project-form-name" variant="outlined"
+              <p className={ formLabelStyle } >Correo/ teléfono</p>
+              <TextField fullWidth id="project-form-mail-or-phone" variant="outlined" size="small"
                 sx={ textFieldStyle }
               />
-
-              <p className="text-[1.7rem] mb-4">Correo/ teléfono</p>
-              <TextField fullWidth id="project-form-mail-or-phone" variant="outlined"
-                sx={ textFieldStyle }
-              />
+              <br></br><br></br>
+              <CustomButton background="white" textColor="black" text="Quiero saber más" size="medium" />
             </Box>
           </Grid>
         </Grid>        
