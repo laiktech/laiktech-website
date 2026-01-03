@@ -7,7 +7,7 @@ export const OurProjects = () => {
     <Box component="section" className="our-projects container">
       <Grid container spacing={2}>
         <Grid size={4}>
-          <h3 className="leading-none mb-10">Proyectos que <br /> impulsamos</h3>
+          <h3 className="leading-none mb-10 mt-4">Proyectos que <br /> impulsamos</h3>
           <p className="text-justify">
             Lorem ipsum dolor sit amet, consectem ipsum dolor sit amet,
             consectem ipsum dolor sit amet, consectem ipsum dolor sit amet, consectem ipsum dolor sit amet, 

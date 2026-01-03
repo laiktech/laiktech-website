@@ -58,7 +58,7 @@ export const OurServices = () => {
   return (
     <Box component="section" className="our-services container">
       <p>Servicios</p>
-      <h3 className="leading-none mb-10">Soluciones tecnológicas <br /> para tu empresa</h3>
+      <h3 className="leading-none mb-10 mt-4">Soluciones tecnológicas <br /> para tu empresa</h3>
       <div className="overflow-hidden relative">
         <div className="flex animate-scroll-left">
           {
