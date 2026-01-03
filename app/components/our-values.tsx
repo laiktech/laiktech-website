@@ -23,8 +23,14 @@ export const OurValues = () => {
         </Grid>        
       </Box> */}
 
-      <Box className="our-values__body mt-10 grid grid-cols-2">
-        <figure className="flex justify-center items-center">
+      <Box className="our-values__body mt-10" sx={{
+        display: "grid",
+        gridTemplateColumns: {
+          sx: "1fr",
+          md: "1fr 1fr"
+        }
+      }}>
+        <figure className="flex justify-center items-center order-2 md:order-1">
           <Image
             alt="leasing"
             src="/images/man-tech-2.jpg"
@@ -33,7 +39,7 @@ export const OurValues = () => {
             width={200}
           />
         </figure>
-        <div className="our-values__description text-right flex flex-col justify-center items-center">
+        <div className="our-values__description text-right flex flex-col justify-center items-center order-1 md:order-2 mb-8">
           <h2 className="leading-none mb-6">
             Somos como astronautas (¡Tecnológicos!)
           </h2>
