@@ -17,6 +17,7 @@ const CustomButtonStyled = styled(Button)(({ theme }) => ({
   textTransform: "none",
   // padding by default
   padding: "0.5em 1.5em",
+  borderRadius: "0.5em",
 
   // small
   "&.MuiButton-sizeSmall": {
@@ -24,10 +25,16 @@ const CustomButtonStyled = styled(Button)(({ theme }) => ({
     fontSize: "0.75rem",
   },
 
+  // medium
+  "&.MuiButton-sizeMedium": {
+  padding: "0.5em 1.5em",
+    fontSize: "0.75rem",
+  },
+
   // large
   "&.MuiButton-sizeLarge": {
-    padding: "0.75em 2em",
-    fontSize: "1rem",
+    padding: "0.9em 2.4em",
+    fontSize: "1.3rem",
   },
 }));
 

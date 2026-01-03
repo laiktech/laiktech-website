@@ -6,7 +6,7 @@ import Grid from "@mui/material/Grid";
 export const OurValues = () => {
   return (
     <Box component="section" className="our-values container">
-      <Box className="our-values__head">
+{/*       <Box className="our-values__head">
         <Grid container spacing={6}>
           <Grid size={4}>
             <h3 className="text-center pb-2">Valor 1</h3>
@@ -21,7 +21,7 @@ export const OurValues = () => {
             <p className="text-justify">Lorem ipsum dolor sit amet, con-sectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
           </Grid>
         </Grid>        
-      </Box>
+      </Box> */}
 
       <Box className="our-values__body mt-10 grid grid-cols-2">
         <figure className="flex justify-center items-center">

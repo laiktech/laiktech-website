@@ -18,7 +18,7 @@ export const MainSection = forwardRef<HTMLDivElement>(function Banner(_props, re
         <h2 className={ titleStyle } >Soluciones</h2>
         <h2 className={ titleStyle } >tecnológicas</h2>
         <h2 className={ titleStyle } >de otro planeta</h2>
-        <p className="text-white text-[1.2rem] pt-7 pb-11">Loremipsumloremipsumloremipsumloremipsloremipsum</p>
+        <p className="text-white text-[1.2rem] pt-7 pb-11">Cuéntanos tu idea y búscaremos hacerla realidad!</p>
         <CustomButton background="white" textColor="black" text="¡A despegar!" size="large" />
       </Box>
     </Box>
