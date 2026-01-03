@@ -14,7 +14,7 @@ export const MainSection = forwardRef<HTMLDivElement>(function Banner(_props, re
         fill
         className="object-cover"
       />
-      <Box className="main-section__content relative h-full font-satoshi p-[7em]" >
+      <Box className="main-section__content relative h-full font-satoshi p-[13em]" >
         <h2 className={ titleStyle } >Soluciones</h2>
         <h2 className={ titleStyle } >tecnológicas</h2>
         <h2 className={ titleStyle } >de otro planeta</h2>
