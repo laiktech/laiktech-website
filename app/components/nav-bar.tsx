@@ -73,14 +73,21 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
           >
             <MenuIcon />
           </IconButton>
-          <Box component="figure" sx={{ width: "13%", background: "black", boxShadow: "1px 0px 2px 1px #000" }}>
+          <Box component="figure" sx={{
+            boxShadow: "1px 0px 2px 1px #000",
+            background: "black",
+            width: {
+              xs: "21%",
+              md: "13%",
+            }
+          }}>
             <Image
               src="/icons/logo.png"
               alt="logo"
               width={500}
               height={500}
             />
-            <p className="text-center text-[0.8rem] text-neutral-300">Consultoría y desarrollo TI</p>
+            <p className="text-center text-[0.8rem] text-neutral-300 hidden lg:block">Consultoría y desarrollo TI</p>
           </Box>
           <Box className="nav-items" sx={ navItemsStyles }
           >
