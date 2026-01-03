@@ -18,16 +18,16 @@ const serviceCardList: serviceCardType[] = [
   {
     background: "bg-secondary",
     colorText: "text-primary",
-    description: "Optimiza tus procesos, mejora la eficiencia y alcanza tus objetivos comerciales.",
-    icon: "software-developer",
-    title: "Desarrollo de software",
+    description: "Publicidad digital, analítica, diseño y optimización de páginas web orientadas a conversión y experiencia de usuario.",
+    icon: "digital-marketing",
+    title: "Marketing digital",
   },
   {
     background: "bg-primary",
     colorText: "text-secondary",
     description: "Destaca tu empresa en línea y ofrece una experiencia excepcional a tus visitantes.",
-    icon: "searching-website",
-    title: "Desarrollo de páginas web",
+    icon: "software-developer",
+    title: "Desarrollo de software",
   },
   {
     background: "bg-secondary",
@@ -45,8 +45,8 @@ const ServiceCard = ({ item } : serviceCardProps) => (
         alt="software-developer"
         className="w-auto h-auto"
         src={`/icons/${ item.icon }.png`}
-        height={0}
-        width={0}
+        height={55}
+        width={55}
       />
     </figure>
     <p className="text-xl font-medium">{ item.title }</p>
@@ -60,7 +60,7 @@ export const OurServices = () => {
       <p>Servicios</p>
       <h3 className="leading-none mb-10 mt-4">Soluciones tecnológicas <br /> para tu empresa</h3>
       <div className="overflow-hidden relative">
-        <div className="flex animate-scroll-left">
+        <div className="flex animate-scroll-le2ft">
           {
             serviceCardList.map((item, index: number) => <ServiceCard key={`${index}-${item.title}`} item={ item } />)
           }
