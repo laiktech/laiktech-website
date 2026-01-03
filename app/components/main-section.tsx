@@ -14,12 +14,19 @@ export const MainSection = forwardRef<HTMLDivElement>(function Banner(_props, re
         fill
         className="object-cover"
       />
-      <Box className="main-section__content relative h-full font-satoshi p-[13em]" >
+      <Box className="main-section__content relative h-full font-satoshi" 
+        sx={{
+          padding: {
+            xs: "10em 2em",
+            md: "13em"
+          }
+        }}
+      >
         <h2 className={ titleStyle } >Soluciones</h2>
         <h2 className={ titleStyle } >tecnológicas</h2>
         <h2 className={ titleStyle } >de otro planeta</h2>
         <p className="text-white text-[1.2rem] pt-7 pb-11">Cuéntanos tu idea y búscaremos hacerla realidad!</p>
-        <CustomButton background="white" textColor="black" text="¡A despegar!" size="large" />
+        <CustomButton background="white" textColor="black" text="¡A despegar!" size="medium" />
       </Box>
     </Box>
   )

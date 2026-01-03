@@ -57,11 +57,11 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
   );
 
   return (
-    <Box className="navigation" sx={{ display: "flex" }} >
+    <Box className="navigation" >
       <CssBaseline /> 
       <AppBar component="nav" sx={{
-        background: isMainBannerVisible ? "#00000069": "black", 
-        padding: "0.4em 0em", 
+        background: isMainBannerVisible ? "#00000069": "black",
+        padding: "0.4em 0em",
       }}>
         <Toolbar>
           <IconButton
@@ -98,6 +98,7 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
           </Box>
         </Toolbar>
       </AppBar>
+      {/* Drawer Mobile */}
       <nav>
         <Drawer
           variant="temporary"
