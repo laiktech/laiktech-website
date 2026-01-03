@@ -17,7 +17,6 @@ export default function Home() {
           <OurValues />
           <OurServices />
           <OurProcess />
-          <OurTechnologies />
         </main>
       </div>
       <ContactUs />
