@@ -18,28 +18,35 @@ const serviceCardList: serviceCardType[] = [
   {
     background: "bg-secondary",
     colorText: "text-primary",
-    description: "Publicidad digital, analítica, diseño y optimización de páginas web orientadas a conversión y experiencia de usuario.",
+    description: "Encendemos tu marca! Atrae más clientes y rediseña tu estrategia de marketing para que no dependas de la suerte.",
     icon: "digital-marketing",
     title: "Marketing digital",
   },
   {
     background: "bg-primary",
     colorText: "text-secondary",
-    description: "Destaca tu empresa en línea y ofrece una experiencia excepcional a tus visitantes.",
+    description: "Construimos tecnología como un traje a medida.",
     icon: "software-developer",
-    title: "Desarrollo de software",
+    title: "Software Factory",
   },
   {
     background: "bg-secondary",
     colorText: "text-primary",
-    description: "Solución confiable y segura para alojar tu sitio web o aplicación en línea sin problemas técnicos.",
-    icon: "searching-website",
-    title: "Hosting",
+    description: "Llevamos tus sistemas, procesos y operaciones a otro nivel.",
+    icon: "launch",
+    title: "Transformación Digital",
+  },
+  {
+    background: "bg-primary",
+    colorText: "text-secondary",
+    description: "Construimos y fortalecemos la columna vertebral de tus sistemas TI.",
+    icon: "infraestructure",
+    title: "Infraestructura TI y Soporte",
   },
 ];
 
 const ServiceCard = ({ item } : serviceCardProps) => (
-  <div className={`p-4 rounded-tr-[5em] w-[13em] h-[19em] ${ item.background } mr-6 ${ item.colorText }`}>
+  <div className={`slider__box p-4 rounded-tr-[5em] w-[13em] h-[19em] ${ item.background } mr-10 ${ item.colorText }`}>
     <figure className="py-4">
       <Image
         alt="software-developer"
@@ -54,17 +61,28 @@ const ServiceCard = ({ item } : serviceCardProps) => (
   </div>
 );
 
+const ServiceSlider = () => {
+  return (
+    <div className="slider">
+      <div className="slider__row">
+        {
+          serviceCardList.map((item, index: number) => <ServiceCard key={`${index}-${item.title}`} item={ item } />)
+        }
+        {
+          serviceCardList.map((item, index: number) => <ServiceCard key={`clone-${index}-${item.title}`} item={ item } />)
+        }
+      </div>
+    </div>
+  );
+};
+
 export const OurServices = () => {
   return (
     <Box component="section" className="our-services container">
       <p>Servicios</p>
       <h3 className="leading-none mb-10 mt-4">Soluciones tecnológicas <br /> para tu empresa</h3>
       <div className="overflow-hidden relative">
-        <div className="flex animate-scroll-le2ft">
-          {
-            serviceCardList.map((item, index: number) => <ServiceCard key={`${index}-${item.title}`} item={ item } />)
-          }
-        </div>
+        <ServiceSlider />
       </div>
     </Box>
   );

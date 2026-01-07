@@ -23,15 +23,6 @@
   }
 }
 
-@keyframes scroll-left {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-@utility animate-scroll-left {
-  animation: scroll-left 20s linear infinite;
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
@@ -54,3 +45,37 @@ section {
   font-family: var(--font-satoshi);
 }
 
+.slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider__row {
+  display: flex;
+  gap: 16px;
+  animation: sliderLeft 30s linear infinite;
+  width: max-content;
+}
+
+.slider__box {
+  min-width: 200px;
+}
+
+@keyframes sliderLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    /* -8px is just the half of the gap value (16px) in order to avoid the "jump"*/
+    transform: translateX(calc(-50% - 8px));
+  }
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@utility animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
+}
