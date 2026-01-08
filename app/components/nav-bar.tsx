@@ -77,7 +77,7 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
             boxShadow: "1px 0px 2px 1px #000",
             background: "black",
             width: {
-              xs: "21%",
+              xs: "33%",
               md: "13%",
             }
           }}>

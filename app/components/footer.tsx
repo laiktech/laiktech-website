@@ -4,7 +4,14 @@ import Box from "@mui/material/Box";
 export const Footer = () => {
 
   return (
-    <Box component="footer" className="relative w-full p-6 flex justify-between items-center">
+    <Box component="footer" className="relative w-full p-6" sx={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: {
+        xs: "space-between",
+        md: "space-around"
+      }
+    }}>
       <div className="flex items-center">
         <Image
           src="/icons/brandmark.svg"
@@ -13,20 +20,22 @@ export const Footer = () => {
           height={50}
         />
         <Image
-          className="ml-2"
+          className="hidden md:block ml-2"
           src="/icons/logo-blue.svg"
           alt="logo"
-          width={100}
-          height={100}
+          width={170}
+          height={50}
         />
       </div>
       <div>
-        <Image
-          src="/icons/email.png"
-          alt="logo"
-          width={40}
-          height={40}
-        />
+        <a href="mailto:contacto@laiktech.com">
+          <Image
+            src="/icons/email.png"
+            alt="logo"
+            width={40}
+            height={40}
+          />
+        </a>
       </div>
     </Box>
   );
