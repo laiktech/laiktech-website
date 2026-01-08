@@ -82,7 +82,7 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
             }
           }}>
             <Image
-              src="/icons/logo.png"
+              src="/icons/logo-white.png"
               alt="logo"
               width={500}
               height={500}
