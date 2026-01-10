@@ -1,10 +1,13 @@
+"use client"
 import Image from "next/image";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { SxProps, Theme } from "@mui/material/styles";
 import { CustomButton } from "../shared/components/custom-button";
 import { NavigationSectionEnum } from "../shared/components/const/navigation";
+import { LAIKTECH_PHONE } from "../shared/components/const/whatsapp";
 
 const textFieldStyle: SxProps<Theme> = {
   "& label": {
@@ -24,6 +27,9 @@ const textFieldStyle: SxProps<Theme> = {
     "&.Mui-focused fieldset": {
       borderColor: "#cecdcd",
     },
+  }, 
+  "& .MuiInputBase-input": {
+    color: "var(--color-neutral-300)",
   },
   "& .MuiOutlinedInput-input::placeholder": {
     color: "gray",
@@ -31,9 +37,41 @@ const textFieldStyle: SxProps<Theme> = {
   },
 };
 
-const formStyle = "text-[1.3rem] mb-6";
+const formStyle: SxProps<Theme> = {
+  backdropFilter: "blur(2px)",
+  backgroundColor: "rgb(255 255 255 / 2%)",
+  padding: {
+    xs: "3em 2em",
+    sm: "4em"
+  },
+  margin: {
+    xs: "0",
+    sm: "2em"
+  },
+  marginTop: {
+    xs: "1em"
+  }
+};
+
+const fieldStyle = "text-[1.3rem] mb-6";
 
 export const ContactUs = () => {
+  const [ projectField , setProjectField ] = useState('');
+  const [ nameField , setNameField ] = useState('');
+  const [ companyField , setCompanyField ] = useState('');
+  const [ emailField , setEmailField ] = useState('');
+
+  const handleContactUs = () => {
+    const basepath = `https://api.whatsapp.com`;
+    const whatsappMessage = 
+      `Hola, Equipo de LaikTech 👋 Te escribe ${ nameField }. Estoy contactándote por la pagina web de Laiktech y me gustaría conversar con Uds. Para que no me guarden como “WhatsApp sin nombre” 😄, les dejo mis otros datos: 
+      🏢 Empresa: ${ companyField }
+      📧 Correo: ${ emailField }
+      ✍️ Asunto: ${ projectField }`;
+    const encodingValue = encodeURIComponent(whatsappMessage);
+    const url = `${ basepath }/send?phone=${ LAIKTECH_PHONE }&text=${ encodingValue }`;
+    window.open(url);
+  };
 
   return (
     <Box id={ NavigationSectionEnum.ContactUs } className="contact-us font-satoshi relative h-[40em] w-full" >
@@ -53,46 +91,35 @@ export const ContactUs = () => {
           <Grid size={{ xs: 12, sm: 5 }} >
             <Box
               className="contact-us__form border-[1] border-gray-500 rounded-4xl text-neutral-300" component="form"
-              sx={{
-                backdropFilter: "blur(2px)",
-                backgroundColor: "rgb(255 255 255 / 2%)",
-                padding: {
-                  xs: "3em 2em",
-                  sm: "4em"
-                },
-                margin: {
-                  xs: "0",
-                  sm: "2em"
-                },
-                marginTop: {
-                  xs: "1em"
-                }
-              }}
+              sx={ formStyle }
               noValidate
               autoComplete="off"
             >
-              <div className={ formStyle } >
+              <div className={ fieldStyle } >
                 <p>Cuéntanos sobre tu proyecto</p>
-                <TextField fullWidth id="project-form-detail" variant="outlined" size="small"
-                  multiline rows={3} sx={ textFieldStyle }
-                />
+                <TextField fullWidth id="project-form-detail" variant="outlined" size="small" multiline rows={3} 
+                sx={ textFieldStyle } value={ projectField } onChange={ (e) => setProjectField(e.target.value) }  />
               </div>
 
-              <div className={ formStyle } >
+              <div className={ fieldStyle } >
                 <p>Nombre</p>
                 <TextField fullWidth id="project-form-name" variant="outlined" size="small"
-                  sx={ textFieldStyle }
-                />
+                  sx={ textFieldStyle } value={ nameField } onChange={ (e) => setNameField(e.target.value) }  />
               </div>
 
-              <div className={ formStyle } >
-                <p>Correo/ teléfono</p>
-                <TextField fullWidth id="project-form-mail-or-phone" variant="outlined" size="small"
-                  sx={ textFieldStyle }
-                />
+              <div className={ fieldStyle } >
+                <p>Empresa</p>
+                <TextField fullWidth id="project-form-company" variant="outlined" size="small"
+                  sx={ textFieldStyle } value={ companyField } onChange={ (e) => setCompanyField(e.target.value) }  />
               </div>
 
-              <CustomButton background="white" textColor="black" text="Quiero saber más" size="medium" />
+              <div className={ fieldStyle } >
+                <p>Correo</p>
+                <TextField fullWidth id="project-form-company" variant="outlined" size="small"
+                  sx={ textFieldStyle } value={ emailField } onChange={ (e) => setEmailField(e.target.value) }  />
+              </div>
+
+              <CustomButton background="white" textColor="black" text="Quiero saber más" size="medium" onClick={ handleContactUs } />
             </Box>
           </Grid>
         </Grid>        
