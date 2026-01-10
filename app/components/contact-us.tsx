@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import { SxProps, Theme } from "@mui/material/styles";
 import { CustomButton } from "../shared/components/custom-button";
+import { NavigationSectionEnum } from "../shared/components/const/navigation";
 
 const textFieldStyle: SxProps<Theme> = {
   "& label": {
@@ -35,7 +36,7 @@ const formStyle = "text-[1.3rem] mb-6";
 export const ContactUs = () => {
 
   return (
-    <Box className="contact-us font-satoshi relative h-[40em] w-full" >
+    <Box id={ NavigationSectionEnum.ContactUs } className="contact-us font-satoshi relative h-[40em] w-full" >
       <Image
         src="/backgrounds/rocket-space.png"
         alt="Contact us"

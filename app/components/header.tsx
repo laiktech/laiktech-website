@@ -10,7 +10,6 @@ export const Header = () => {
   
   useEffect(() => {
     if (!ref.current) return;
-
     const observer = new IntersectionObserver(([entry]) => {
       setMainBannerVisible(entry.isIntersecting);
     }, { threshold: 0.4 });
@@ -20,8 +19,8 @@ export const Header = () => {
 
   return (
     <Box className="header">
-      <MainSection ref={ ref } />
       <NavBar isMainBannerVisible={ isMainBannerVisible } />
+      <MainSection ref={ ref } />
     </Box>
   );
 };

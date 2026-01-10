@@ -16,14 +16,29 @@ import ListItemText from "@mui/material/ListItemText";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { SxProps, Theme } from "@mui/material/styles";
-import { CustomButton } from "../shared/components/custom-button";
+import Link from "next/link";
+import { NavigationSectionEnum } from "../shared/components/const/navigation";
 
 type BannerProps = {
   isMainBannerVisible: boolean;
 };
 
 const drawerWidth = 240;
-const navItems = ["Home", "Nosotros", "Servicios"];
+const navItems = [
+  {
+    href: NavigationSectionEnum.Home,
+    value: "Home"
+  },
+  {
+    href: NavigationSectionEnum.AboutUs,
+    value: "Nosotros", 
+  },
+  {
+    href: NavigationSectionEnum.OurServices,
+    value: "Servicios"
+  }
+];
+
 const navItemsStyles: SxProps<Theme> = {
   display: { xs: "none", sm: "flex" },
   width: "100%",
@@ -46,9 +61,9 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={ item } disablePadding >
+          <ListItem key={ item.href } disablePadding >
             <ListItemButton sx={{ textAlign: "center" }} >
-              <ListItemText primary={ item } />
+              <ListItemText primary={ item.value } />
             </ListItemButton>
           </ListItem>
         ))}
@@ -92,9 +107,13 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
           <Box className="nav-items" sx={ navItemsStyles }
           >
             { navItems.map((item) => (
-              <CustomButton key={ item } textColor="white" background="transparent" fontFamily="mont-black" text={ item } />
+              <Link key={ item.href } href={`#${ item.href }`} className="font-mont-black">{ item.value }</Link>
             ))}
-            <CustomButton textColor="black" background="white" text="Contáctanos" fontFamily="mont-black" />
+            <Link key={ NavigationSectionEnum.ContactUs } href={`#${ NavigationSectionEnum.ContactUs }`}
+              className="font-mont-black bg-white text-black px-4 py-2 rounded-md"
+            >
+              Contáctanos
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
