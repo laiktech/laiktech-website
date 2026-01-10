@@ -2,27 +2,11 @@ import Image from "next/image";
 
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import { NavigationSectionEnum } from "../shared/components/const/navigation";
 
-export const OurValues = () => {
+export const AboutUs = () => {
   return (
-    <Box component="section" className="our-values container">
-{/*       <Box className="our-values__head">
-        <Grid container spacing={6}>
-          <Grid size={4}>
-            <h3 className="text-center pb-2">Valor 1</h3>
-            <p className="text-justify">Lorem ipsum dolor sit amet, con-sectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-          </Grid>
-          <Grid size={4}>
-            <h3 className="text-center pb-2">Valor 2</h3>
-            <p className="text-justify">Lorem ipsum dolor sit amet, con-sectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-          </Grid>
-          <Grid size={4}>
-            <h3 className="text-center pb-2">Valor 3</h3>
-            <p className="text-justify">Lorem ipsum dolor sit amet, con-sectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.</p>
-          </Grid>
-        </Grid>        
-      </Box> */}
-
+    <Box id={ NavigationSectionEnum.AboutUs } component="section" className="our-values container">
       <Box className="our-values__body mt-10" sx={{
         display: "grid",
         gridTemplateColumns: {
