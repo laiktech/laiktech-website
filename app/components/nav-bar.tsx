@@ -55,19 +55,28 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
 
   const drawerMobile = (
     <Box onClick={ handleDrawerToggle } sx={{ textAlign: "center" }} >
-      <Typography variant="h6" sx={{ my: 2 }} >
-        LaikTech
-      </Typography>
+      <Box className="nav-logo--mobile flex justify-center items-center m-4">
+        <Image
+          src="/icons/logo-blue.svg"
+          alt="logo"
+          width={150}
+          height={150}
+        />
+      </Box>
       <Divider />
-      <List>
-        {navItems.map((item) => (
-          <ListItem key={ item.href } disablePadding >
-            <ListItemButton sx={{ textAlign: "center" }} >
-              <ListItemText primary={ item.value } />
-            </ListItemButton>
-          </ListItem>
+      <Box className="nav-items flex flex-col mt-4">
+        { navItems.map((item) => (
+          <div key={ item.href } className="nav-item font-mont-black m-4">
+            <Link href={`#${ item.href }`}>{ item.value }</Link>
+          </div>
         ))}
-      </List>
+        <div key={ NavigationSectionEnum.ContactUs } className="nav-item font-mont-black m-4">
+          <Link  href={`#${ NavigationSectionEnum.ContactUs }`} 
+          className="font-mont-black m-4">
+            Contáctanos
+          </Link>
+        </div>
+      </Box>
     </Box>
   );
 
@@ -104,8 +113,7 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
             />
             <p className="text-center text-[0.8rem] text-neutral-300 hidden lg:block">Consultoría y desarrollo TI</p>
           </Box>
-          <Box className="nav-items" sx={ navItemsStyles }
-          >
+          <Box className="nav-items" sx={ navItemsStyles }>
             { navItems.map((item) => (
               <Link key={ item.href } href={`#${ item.href }`} className="font-mont-black">{ item.value }</Link>
             ))}
