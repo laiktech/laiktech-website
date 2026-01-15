@@ -19,7 +19,7 @@ const serviceCardList: serviceCardType[] = [
   {
     background: "bg-secondary",
     colorText: "text-primary",
-    description: "Encendemos tu marca! Atrae más clientes y rediseña tu estrategia de marketing para que no dependas de la suerte.",
+    description: "¡Encendemos tu marca! Atrae más clientes y rediseña tu estrategia de marketing para que no dependas de la suerte.",
     icon: "digital-marketing",
     title: "Marketing digital",
   },

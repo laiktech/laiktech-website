@@ -25,13 +25,12 @@ export const AboutUs = () => {
         </figure>
         <div className="our-values__description text-right flex flex-col justify-center items-center order-1 md:order-2 mb-8">
           <h2 className="leading-none mb-6">
-            Somos como astronautas (¡Tecnológicos!)
+            Traemos teconología del futuro al presente
           </h2>
           <p>
-            Somos un equipo de expertos en <strong>consultoría de TI y desarrollo de software.</strong>
-            Con amplia experiencia en el sector, nos dedicamos a ofrecer soluciones tecnológicas innovadoras y 
-            a medida para <strong>empresas de diversos sectores.</strong> Contamos con especialistas en áreas como análisis de datos,
-            desarrollo web y móvil, calidad, y más.
+            Somos un equipo de expertos en <strong>consultoría de TI y desarrollo de software.</strong> Con amplia experiencia en el sector, 
+            nos dedicamos a ofrecer soluciones tecnológicas innovadoras y 
+            a medida para <strong>empresas de diversos sectores.</strong>
           </p>
         </div>
       </Box>
