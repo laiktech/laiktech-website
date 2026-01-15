@@ -79,10 +79,9 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
     <Box className="navigation" >
       <CssBaseline /> 
       <AppBar component="nav" sx={{
-        background: isMainBannerVisible ? "#00000069": "black",
-        padding: "0.4em 0em",
+        background: isMainBannerVisible ? "#00000069": "black"
       }}>
-        <Toolbar>
+        <Toolbar sx={{ paddingLeft: "0px !important" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -93,11 +92,15 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
             <MenuIcon />
           </IconButton>
           <Box component="figure" sx={{
-            boxShadow: "1px 0px 2px 1px #000",
             background: "black",
-            width: {
+            maxWidth: {
               xs: "33%",
-              md: "13%",
+              md: "23%",
+              lg: "15%",
+            },
+            padding: {
+              xs: "1em",
+              md: "0.5em 2em"
             }
           }}>
             <Image
