@@ -31,13 +31,7 @@ export const MainSection = forwardRef<HTMLDivElement>(function Banner(_props, re
     <Box ref={ref} className="banner">
       <img className="h-screen w-full" src="/backgrounds/universe-1.png" alt="Tierra" />
       <div ref={earthRef} className="earth-banner">
-        <Image
-          src="/backgrounds/planet-earth-isolated.png"
-          alt="Banner"
-          fill
-          className="object-cover"
-        /> 
-        {/*       <img src="/backgrounds/planet-earth-isolated.png" alt="Tierra" /> */}
+        <img src="/backgrounds/planet-earth-isolated.png" alt="Tierra" />
       </div>
       <Box className="main-section__content relative h-full font-satoshi" 
         sx={{
