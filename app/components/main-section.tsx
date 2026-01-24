@@ -1,26 +1,44 @@
-import { forwardRef } from "react";
+import { forwardRef, useEffect, useRef } from "react";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import { CustomButton } from "../shared/components/custom-button";
 import { LAIKTECH_PHONE, WHATSAPP_BASIC_MESSAGE } from "../shared/components/const/whatsapp";
+import { animate } from 'animejs';
 
 const titleStyle = "text-white text-[4rem] font-black leading-[1.2]";
 
 export const MainSection = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
+  const earthRef = useRef<HTMLImageElement | null>(null);
+  
   const handleContactButton = () => {
     const basepath = `https://api.whatsapp.com`;
     const url = `${ basepath }/send?phone=${ LAIKTECH_PHONE }&text=${ WHATSAPP_BASIC_MESSAGE }`;
     window.open(url);
-  };
+  }; 
+  
+  useEffect(() => {
+    if (!earthRef.current) return;
+
+    animate(earthRef.current, {
+      translateX: ['100vw', '60vw'],
+      duration: 1500,
+      easing: 'easeOutExpo',
+      delay: 300
+    });
+  }, []);
 
   return (
-    <Box ref={ref} className="banner relative h-[40em] w-full" >
-      <Image
-        src="/backgrounds/banner-home.jpg"
-        alt="Banner"
-        fill
-        className="object-cover"
-      />
+    <Box ref={ref} className="banner">
+      <img className="h-screen w-full" src="/backgrounds/universe-1.png" alt="Tierra" />
+      <div ref={earthRef} className="earth-banner">
+        <Image
+          src="/backgrounds/planet-earth-isolated.png"
+          alt="Banner"
+          fill
+          className="object-cover"
+        /> 
+        {/*       <img src="/backgrounds/planet-earth-isolated.png" alt="Tierra" /> */}
+      </div>
       <Box className="main-section__content relative h-full font-satoshi" 
         sx={{
           padding: {

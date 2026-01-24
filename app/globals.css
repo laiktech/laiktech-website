@@ -79,3 +79,10 @@ section {
 @utility animate-scroll-left {
   animation: scroll-left 20s linear infinite;
 }
+
+.earth-banner {
+  position: absolute;
+  top: 23%;
+  transform: translateX(100vw);
+  width: 33%;
+}
