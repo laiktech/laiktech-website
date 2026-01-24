@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import { CustomButton } from "../shared/components/custom-button";
 import { LAIKTECH_PHONE, WHATSAPP_BASIC_MESSAGE } from "../shared/components/const/whatsapp";
 import { animate } from "animejs";
-import "./main-section.css";
+import "./banner.css";
 
 const titleStyle = "text-white text-[4rem] font-black leading-[1.2]";
 

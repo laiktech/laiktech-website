@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import Box from "@mui/material/Box";
 import { NavBar } from "./nav-bar";
-import { MainSection } from "./main-section";
+import { MainSection } from "./banner";
 
 export const Header = () => {
   const ref = useRef(null);
