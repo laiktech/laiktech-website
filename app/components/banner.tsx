@@ -1,5 +1,4 @@
 import { forwardRef, useEffect, useRef } from "react";
-import Image from "next/image";
 import Box from "@mui/material/Box";
 import { CustomButton } from "../shared/components/custom-button";
 import { LAIKTECH_PHONE, WHATSAPP_BASIC_MESSAGE } from "../shared/components/const/whatsapp";
@@ -8,7 +7,7 @@ import "./banner.css";
 
 const titleStyle = "text-white text-[4rem] font-black leading-[1.2]";
 
-export const MainSection = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
+export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
   const earthRef = useRef<HTMLImageElement | null>(null);
   
   const handleContactButton = () => {
