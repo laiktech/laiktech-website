@@ -8,7 +8,7 @@ import "./banner.css";
 const titleStyle = "text-white text-[4rem] font-black leading-[1.2]";
 
 export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
-  const earthRef = useRef<HTMLImageElement | null>(null);
+  const earthRef = useRef<HTMLDivElement | null>(null);
   
   const handleContactButton = () => {
     const basepath = `https://api.whatsapp.com`;
@@ -28,28 +28,28 @@ export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
   }, []);
 
   return (
-    <Box className="banner">
-      <Box ref={ref} className="banner-container absolute h-[70vh] md:h-screen w-full">
+    <Box ref={ref} className="banner">
+      <Box className="banner-container absolute h-[70vh] md:h-screen w-full">
         <img className="h-full" src="/backgrounds/universe-1.png" alt="Tierra" />
         <div ref={earthRef} className="earth-banner">
           <img src="/backgrounds/planet-earth-isolated.png" alt="Tierra" />
         </div>
       </Box>
-        <Box className="main-section__content relative h-full font-satoshi" 
-          sx={{
-            padding: {
-              xs: "10em 2em",
-              md: "13em"
-            }
-          }}
-        >
-          <h2 className={ titleStyle } >Soluciones</h2>
-          <h2 className={ titleStyle } >tecnológicas</h2>
-          <h2 className={ titleStyle } >de otro planeta</h2>
-          <p className="text-white text-[1.2rem] pt-7 pb-11">Tu futuro digital puesto en órbita para ti</p>
+      <Box className="main-section__content relative h-full font-satoshi" 
+        sx={{
+          padding: {
+            xs: "10em 2em",
+            md: "13em"
+          }
+        }}
+      >
+        <h2 className={ titleStyle } >Soluciones</h2>
+        <h2 className={ titleStyle } >tecnológicas</h2>
+        <h2 className={ titleStyle } >de otro planeta</h2>
+        <p className="text-white text-[1.2rem] pt-7 pb-11">Tu futuro digital puesto en órbita para ti</p>
 
-          <CustomButton background="white" textColor="black" text="¡A despegar!" size="medium"  onClick={ handleContactButton }/>
-        </Box>
+        <CustomButton background="white" textColor="black" text="¡A despegar!" size="medium"  onClick={ handleContactButton }/>
+      </Box>
     </Box>
   )
 });
