@@ -6,6 +6,10 @@
   width: 60%;
 }
 
+.main-section__content {
+  transform: translateX(-100vw);
+}
+
 /* Tablet */
 @media (min-width: 768px) {
   .earth-banner {
