@@ -87,7 +87,7 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ color: "#fff", mr: 2, display: { sm: "none" } }}
+            sx={{ color: "#fff", ml: 2, mr: 1, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>

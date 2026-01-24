@@ -1,0 +1,26 @@
+/* mobile first */
+.earth-banner {
+  position: absolute;
+  top: 20%;
+  transform: translateX(100vw);
+  outline: 2px solid yellow;
+  width: 60%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .earth-banner {
+    outline: 2px solid green;
+    top: 13%;
+    width: 60%;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .earth-banner {
+    outline: 2px solid red;
+    top: 4%;
+    width: 55%;
+  }
+}
