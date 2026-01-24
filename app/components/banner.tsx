@@ -37,9 +37,9 @@ export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
   }, []);
 
   return (
-    <Box ref={ ref } className="banner">
-      <Box className="banner-container absolute h-[70vh] md:h-screen w-full">
-        <img className="h-full" src="/backgrounds/universe-1.png" alt="Tierra" />
+    <Box ref={ ref } className="banner h-screen">
+      <Box className="banner-container absolute w-full h-[70vh] md:h-screen">
+        <img className="h-full w-full" src="/backgrounds/universe-2.png" alt="Tierra" />
         <div ref={ earthRef } className="earth-banner">
           <img src="/backgrounds/planet-earth-isolated.png" alt="Tierra" />
         </div>

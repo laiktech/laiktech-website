@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className="flex min-h-screen items-center justify-center bg-background">
+      <div className="flex min-h-screen items-center justify-center bg-background relative">
         <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between sm:items-start">
           <AboutUs />
           <OurServices />
