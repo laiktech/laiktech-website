@@ -38,10 +38,10 @@ export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
 
   return (
     <Box ref={ ref } className="banner h-screen">
-      <Box className="banner-container absolute w-full h-[70vh] md:h-screen">
+      <Box className="banner-container overflow-hidden absolute w-full h-[70vh] md:h-screen">
         <img className="h-full w-full" src="/backgrounds/universe-2.png" alt="Tierra" />
-        <div ref={ earthRef } className="earth-banner">
-          <img src="/backgrounds/planet-earth-isolated.png" alt="Tierra" />
+        <div ref={ earthRef } className="earth-banner h-full">
+          <img className="h-full" src="/backgrounds/planet-earth-isolated-1.png" alt="Tierra" />
         </div>
       </Box>
       <Box ref={ descriptionTextRef } className="main-section__content relative h-full font-satoshi" 
@@ -52,9 +52,9 @@ export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
           }
         }}
       >
-        <h2 className={ titleStyle } >Soluciones</h2>
-        <h2 className={ titleStyle } >tecnológicas</h2>
-        <h2 className={ titleStyle } >de otro planeta</h2>
+        <p className={ titleStyle } >Soluciones</p>
+        <p className={ titleStyle } >tecnológicas</p>
+        <p className={ titleStyle } >de otro planeta</p>
         <p className="text-white text-[1.2rem] pt-7 pb-11">Tu futuro digital puesto en órbita para ti</p>
 
         <CustomButton background="white" textColor="black" text="¡A despegar!" size="medium"  onClick={ handleContactButton }/>

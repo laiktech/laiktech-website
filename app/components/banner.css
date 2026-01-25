@@ -1,27 +1,15 @@
 /* mobile first */
 .earth-banner {
   position: absolute;
-  top: 20%;
   transform: translateX(100vw);
-  width: 60%;
+  top: 0;
 }
 
 .main-section__content {
   transform: translateX(-100vw);
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-  .earth-banner {
-    top: 13%;
-    width: 60%;
-  }
-}
+/* Tablet
+// @media (min-width: 768px) {
 
-/* Desktop */
-@media (min-width: 1024px) {
-  .earth-banner {
-    top: 10%;
-    width: 55%;
-  }
-}
+// @media (min-width: 1024px) {
