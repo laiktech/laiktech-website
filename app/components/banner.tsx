@@ -5,7 +5,7 @@ import { LAIKTECH_PHONE, WHATSAPP_BASIC_MESSAGE } from "../shared/components/con
 import { animate } from "animejs";
 import "./banner.css";
 
-const titleStyle = "text-white text-[4rem] font-black leading-[1.2]";
+const titleStyle = "text-white text-[3rem] md:text-[4rem] font-black leading-[1.2]";
 
 export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
   const earthRef = useRef<HTMLDivElement | null>(null);
@@ -52,9 +52,9 @@ export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
           }
         }}
       >
-        <p className={ titleStyle } >Soluciones</p>
-        <p className={ titleStyle } >tecnológicas</p>
-        <p className={ titleStyle } >de otro planeta</p>
+        <p className={ titleStyle }>Soluciones</p>
+        <p className={ titleStyle }>tecnológicas</p>
+        <p className={ titleStyle }>de otro planeta</p>
         <p className="text-white text-[1.2rem] pt-7 pb-11">Tu futuro digital puesto en órbita para ti</p>
 
         <CustomButton background="white" textColor="black" text="¡A despegar!" size="medium"  onClick={ handleContactButton }/>
