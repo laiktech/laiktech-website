@@ -25,7 +25,7 @@ export const AboutUs = () => {
         </figure>
         <div className="our-values__description text-right flex flex-col justify-center items-center order-1 md:order-2 mb-8">
           <h2 className="leading-none mb-6">
-            Traemos teconología del futuro al presente
+            Traemos tecnología del futuro al presente
           </h2>
           <p>
             Somos un equipo de expertos en <strong>consultoría de TI y desarrollo de software.</strong> Con amplia experiencia en el sector, 
