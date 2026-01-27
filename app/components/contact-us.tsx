@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
@@ -8,6 +8,7 @@ import { SxProps, Theme } from "@mui/material/styles";
 import { CustomButton } from "../shared/components/custom-button";
 import { NavigationSectionEnum } from "../shared/components/const/navigation";
 import { LAIKTECH_PHONE } from "../shared/components/const/whatsapp";
+import { animate } from "animejs";
 
 const textFieldStyle: SxProps<Theme> = {
   "& label": {
@@ -61,6 +62,8 @@ export const ContactUs = () => {
   const [ companyField , setCompanyField ] = useState('');
   const [ emailField , setEmailField ] = useState('');
 
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+
   const handleContactUs = () => {
     const basepath = `https://api.whatsapp.com`;
     const whatsappMessage = 
@@ -72,6 +75,24 @@ export const ContactUs = () => {
     const url = `${ basepath }/send?phone=${ LAIKTECH_PHONE }&text=${ encodingValue }`;
     window.open(url);
   };
+
+  useEffect(() => {
+    const buttonCurrent = buttonRef.current
+    if (!buttonCurrent) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        animate(buttonCurrent,{
+          scale: [
+            { to: 1.2, duration: 400, easing: "ease-out" },
+            { to: 1,   duration: 400, easing: "ease-in" },
+          ]
+        })
+      }
+    });
+    
+    observer.observe(buttonCurrent);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Box id={ NavigationSectionEnum.ContactUs } className="contact-us font-satoshi relative h-[45em] w-full" >
@@ -119,7 +140,7 @@ export const ContactUs = () => {
                   sx={ textFieldStyle } value={ emailField } onChange={ (e) => setEmailField(e.target.value) }  />
               </div>
 
-              <CustomButton background="white" textColor="black" text="Quiero saber más" size="medium" onClick={ handleContactUs } />
+              <CustomButton ref={ buttonRef } background="white" textColor="black" text="Quiero saber más" size="medium" onClick={ handleContactUs } />
             </Box>
           </Grid>
         </Grid>        
