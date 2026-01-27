@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 import Image from "next/image";
@@ -13,10 +14,6 @@ import Toolbar from "@mui/material/Toolbar";
 import { SxProps, Theme } from "@mui/material/styles";
 import Link from "next/link";
 import { NavigationSectionEnum } from "../shared/components/const/navigation";
-
-type BannerProps = {
-  isMainBannerVisible: boolean;
-};
 
 const drawerWidth = 240;
 const navItems = [
@@ -41,7 +38,7 @@ const navItemsStyles: SxProps<Theme> = {
   alignItems: "center"
 };
 
-export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
+export const NavBar = () => {
   const [ mobileOpen, setMobileOpen ] = useState(false);
   
   const handleDrawerToggle = () => {
@@ -79,7 +76,7 @@ export const NavBar = ({ isMainBannerVisible }: BannerProps) => {
     <Box className="navigation" >
       <CssBaseline /> 
       <AppBar component="nav" sx={{
-        background: isMainBannerVisible ? "#00000069": "black"
+        background: "black"
       }}>
         <Toolbar sx={{ paddingLeft: "0px !important" }}>
           <IconButton

@@ -56,7 +56,7 @@ export const OurProcess = () => {
   }, []);
   
   return (
-    <Box ref={ componentRef } component="section" className="our-process container">
+    <Box ref={ componentRef } component="section" className="our-process overflow-hidden container">
       <p ref={ countdownRef } className="countdown">
         En <span className={ counterStyle }>5</span>, <span className={counterStyle}>4</span>, <span className={counterStyle}>3</span>...
       </p>

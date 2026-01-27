@@ -1,4 +1,5 @@
-import { forwardRef, useEffect, useRef } from "react";
+"use client";
+import { useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
 import { CustomButton } from "../shared/components/custom-button";
 import { LAIKTECH_PHONE, WHATSAPP_BASIC_MESSAGE } from "../shared/components/const/whatsapp";
@@ -7,7 +8,7 @@ import "./banner.css";
 
 const titleStyle = "text-white text-[3rem] md:text-[4rem] font-black leading-[1.2]";
 
-export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
+export const Banner = () => {
   const earthRef = useRef<HTMLDivElement | null>(null);
   const descriptionTextRef = useRef<HTMLDivElement | null>(null);
   
@@ -37,14 +38,14 @@ export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
   }, []);
 
   return (
-    <Box ref={ ref } className="banner h-screen">
-      <Box className="banner-container overflow-hidden absolute w-full h-[70vh] md:h-screen">
+    <Box className="banner h-[70vh] md:h-screen overflow-hidden">
+      <Box className="banner-container overflow-hidden absolute w-full h-full">
         <img className="h-full w-full" src="/backgrounds/universe-2.png" alt="Tierra" />
-        <div ref={ earthRef } className="earth-banner h-full">
+        <div ref={ earthRef } className="earth-banner h-[50%] md:h-full">
           <img className="h-full" src="/backgrounds/planet-earth-isolated-1.png" alt="Tierra" />
         </div>
       </Box>
-      <Box ref={ descriptionTextRef } className="main-section__content relative h-full font-satoshi" 
+      <Box ref={ descriptionTextRef } className="main-section__content relative  h-full font-satoshi" 
         sx={{
           padding: {
             xs: "10em 2em",
@@ -61,4 +62,4 @@ export const Banner = forwardRef<HTMLDivElement>(function Banner(_props, ref) {
       </Box>
     </Box>
   )
-});
+};
