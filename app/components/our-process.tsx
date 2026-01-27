@@ -1,11 +1,38 @@
+"use client";
 import Image from "next/image";
 import Box from "@mui/material/Box";
+import { animate, stagger } from "animejs";
+import { useEffect, useRef } from "react";
+
+const counterStyle = "num inline-block";
 
 export const OurProcess = () => {
-
+  const componentRef = useRef<HTMLDivElement | null>(null);
+  const countdownRef = useRef<HTMLParagraphElement | null>(null);
+  
+  useEffect(() => {
+    if (!componentRef.current || !countdownRef.current) return;
+    const numbers = countdownRef.current.querySelectorAll<HTMLSpanElement>(".num");
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        animate(numbers, {
+          opacity: [0, 1],
+          scale: [2, 1],
+          easing: "ease-out",
+          duration: 700,
+          delay: stagger(1000),
+        });
+      }
+    }, { threshold: 0 });
+    observer.observe(componentRef.current);
+    return () => observer.disconnect();
+  }, []);
+  
   return (
-    <Box component="section" className="our-process container">
-      <p>En 5, 4, 3...</p>
+    <Box ref={ componentRef } component="section" className="our-process container">
+      <p ref={ countdownRef } className="countdown">
+        En <span className={ counterStyle }>5</span>, <span className={counterStyle}>4</span>, <span className={counterStyle}>3</span>...
+      </p>
       <h3 className="leading-none mb-10 mt-4">
         Los pasos para tu <br /> lanzamiento espacial
       </h3>
@@ -42,7 +69,6 @@ export const OurProcess = () => {
           />
         </figure>
       </div>
-
     </Box>
   )
 };

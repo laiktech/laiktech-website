@@ -4,7 +4,6 @@ import { Header } from "./components/header";
 import { OurProcess } from "./components/our-process";
 import { OurServices } from "./components/our-services";
 import { AboutUs } from "./components/about-us";
-import { OurTechnologies } from "./components/out-technologies";
 
 export const bannerHeight = "lg";
 
