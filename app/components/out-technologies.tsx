@@ -14,7 +14,7 @@ export const OurTechnologies = () => {
             { technologiesIcons.map((item, index: number) => 
             <figure key={`${index}-${item}`} className="max-w-[3em]">
               <Image
-                alt="software-developer"
+                alt="tecnologías en Laiktech"
                 src={`/icons/${ item }.png`}
                 width={100}
                 height={100}

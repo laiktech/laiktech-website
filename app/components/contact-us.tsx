@@ -95,7 +95,7 @@ export const ContactUs = () => {
     <Box id={ NavigationSectionEnum.ContactUs } className="contact-us font-satoshi relative h-[45em] w-full" >
       <Image
         src="/backgrounds/rocket-space.png"
-        alt="Contact us"
+        alt="Contacto con Laiktech"
         fill
         className="object-cover"
       />

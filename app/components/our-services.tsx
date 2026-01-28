@@ -50,7 +50,7 @@ const ServiceCard = ({ item } : serviceCardProps) => (
   <div className={`slider__box p-4 rounded-tr-[5em] w-[13em] h-[19em] ${ item.background } mr-10 ${ item.colorText }`}>
     <figure className="py-4">
       <Image
-        alt="software-developer"
+        alt="servicios de Laiktech"
         className="w-auto h-auto"
         src={`/icons/${ item.icon }.png`}
         height={55}

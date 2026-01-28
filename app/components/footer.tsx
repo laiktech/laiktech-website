@@ -34,7 +34,7 @@ export const Footer = () => {
         <a href="mailto:contacto@laiktech.com">
           <Image
             src="/icons/email.png"
-            alt="logo"
+            alt="email a Laiktech"
             width={46}
             height={40}
           />
@@ -42,7 +42,7 @@ export const Footer = () => {
         <Link href={ pathToWhatsapp } target="_blank">
           <Image
             src="/icons/chat.png"
-            alt="logo"
+            alt="chatea con Laiktech"
             width={40}
             height={55}
           />

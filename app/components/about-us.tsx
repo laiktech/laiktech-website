@@ -16,7 +16,7 @@ export const AboutUs = () => {
       }}>
         <figure className="flex justify-center items-center order-2 md:order-1">
           <Image
-            alt="leasing"
+            alt="sobre Laiktech"
             src="/images/man-tech-2.jpg"
             className="w-auto h-auto rounded-[2em]"
             height={200}
