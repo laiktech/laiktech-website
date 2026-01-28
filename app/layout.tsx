@@ -6,7 +6,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 export const metadata: Metadata = {
   title: "Laiktech",
-  description: "IT Consulting",
+  description: "IT Consulting - Tu primer paso para desarrollar tu gran idea tecnológica",
 };
 
 export const montBlack = localFont(
