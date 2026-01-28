@@ -100,21 +100,14 @@ export const NavBar = () => {
               md: "0.5em 2em"
             }
           }}>
-            <Box component="figure" className="relative w-[6em] h-[2em] overflow-hidden" sx={{
-              height: {
-                xs: "2em",
-                md: "3em"
-              },
-              width: {
-                xs: "6em",
-                md: "10em"
-              }
-            }}>
+            <Box component="figure" className="relative w-[11em] h-[3em] overflow-hidden">
               <Image
                 src="/icons/logo-white.png"
                 alt="logo"
                 fill
-              className="w-full h-full object-contain"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="eager"
+                className="w-full h-full object-contain"
               />
             </Box>
             <p className="text-center text-[0.8rem] text-neutral-300 hidden lg:block">Consultoría y desarrollo TI</p>
