@@ -1,7 +1,10 @@
+import Link from "next/link";
 import Image from "next/image";
 import Box from "@mui/material/Box";
+import { basepath, LAIKTECH_PHONE, WHATSAPP_BASIC_MESSAGE } from "../shared/components/const/whatsapp";
 
 export const Footer = () => {
+  const pathToWhatsapp = `${ basepath }/send?phone=${ LAIKTECH_PHONE }&text=${ WHATSAPP_BASIC_MESSAGE }`;
 
   return (
     <Box component="footer" className="relative w-full p-6" sx={{
@@ -36,14 +39,14 @@ export const Footer = () => {
             height={40}
           />
         </a>
-        <a href="mailto:contacto@laiktech.com">
+        <Link href={ pathToWhatsapp } target="_blank">
           <Image
             src="/icons/chat.png"
             alt="logo"
             width={40}
             height={55}
           />
-        </a>
+        </Link>
       </div>
     </Box>
   );

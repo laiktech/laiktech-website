@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import { SxProps, Theme } from "@mui/material/styles";
 import { CustomButton } from "../shared/components/custom-button";
 import { NavigationSectionEnum } from "../shared/components/const/navigation";
-import { LAIKTECH_PHONE } from "../shared/components/const/whatsapp";
+import { redirectToWhatsapp } from "../shared/components/const/whatsapp";
 import { animate } from "animejs";
 
 const textFieldStyle: SxProps<Theme> = {
@@ -65,15 +65,12 @@ export const ContactUs = () => {
   const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const handleContactUs = () => {
-    const basepath = `https://api.whatsapp.com`;
     const whatsappMessage = 
       `Hola, Equipo de LaikTech 👋 Te escribe ${ nameField }. Estoy contactándote por la pagina web de Laiktech y me gustaría conversar con Uds. Para que no me guarden como “WhatsApp sin nombre” 😄, les dejo mis otros datos: 
       🏢 Empresa: ${ companyField }
       📧 Correo: ${ emailField }
       ✍️ Asunto: ${ projectField }`;
-    const encodingValue = encodeURIComponent(whatsappMessage);
-    const url = `${ basepath }/send?phone=${ LAIKTECH_PHONE }&text=${ encodingValue }`;
-    window.open(url);
+    redirectToWhatsapp(whatsappMessage);
   };
 
   useEffect(() => {

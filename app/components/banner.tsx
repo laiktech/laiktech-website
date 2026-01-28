@@ -2,7 +2,7 @@
 import { useEffect, useRef } from "react";
 import Box from "@mui/material/Box";
 import { CustomButton } from "../shared/components/custom-button";
-import { LAIKTECH_PHONE, WHATSAPP_BASIC_MESSAGE } from "../shared/components/const/whatsapp";
+import { redirectToWhatsapp, WHATSAPP_BASIC_MESSAGE } from "../shared/components/const/whatsapp";
 import { animate } from "animejs";
 import "./banner.css";
 
@@ -13,9 +13,7 @@ export const Banner = () => {
   const descriptionTextRef = useRef<HTMLDivElement | null>(null);
   
   const handleContactButton = () => {
-    const basepath = `https://api.whatsapp.com`;
-    const url = `${ basepath }/send?phone=${ LAIKTECH_PHONE }&text=${ WHATSAPP_BASIC_MESSAGE }`;
-    window.open(url);
+    redirectToWhatsapp(WHATSAPP_BASIC_MESSAGE);
   }; 
   
   useEffect(() => {
